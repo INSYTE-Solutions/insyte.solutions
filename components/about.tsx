@@ -6,14 +6,13 @@ export default function About() {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-            About Mark Solutions
-          </span>
+            About Novammoth          </span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-gray-300 mb-6">
-              With over a decade of experience in the tech industry, Mark Solutions provides expert consulting and
+              With over a decade of experience in the tech industry, Novammoth provides expert consulting and
               development services for businesses looking to modernize their technical infrastructure and data
               operations.
             </p>

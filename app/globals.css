@@ -52,3 +52,12 @@ body {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Adjust the percentage */
+  }
+}

@@ -50,23 +50,24 @@ export default function Contact() {
                 <Mail className="h-6 w-6 text-blue-400 mr-4" />
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <p className="text-lg">contact@marksolutions.com</p>
+                  <p className="text-lg">info@novammoth.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center">
-                <Phone className="h-6 w-6 text-blue-400 mr-4" />
-                <div>
-                  <p className="text-sm text-gray-400">Phone</p>
-                  <p className="text-lg">+1 (555) 123-4567</p>
-                </div>
-              </div>
+              {/* <div className="flex items-center"> */}
+              {/*   <Phone className="h-6 w-6 text-blue-400 mr-4" /> */}
+              {/*   <div> */}
+              {/*     <p className="text-sm text-gray-400">Phone</p> */}
+              {/*     <p className="text-lg">+1 (555) 123-4567</p> */}
+              {/*   </div> */}
+              {/* </div> */}
+              {/**/}
 
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-blue-400 mr-4" />
                 <div>
                   <p className="text-sm text-gray-400">Location</p>
-                  <p className="text-lg">San Francisco, CA</p>
+                  <p className="text-lg">Johannesburg, South Africa</p>
                 </div>
               </div>
             </div>
