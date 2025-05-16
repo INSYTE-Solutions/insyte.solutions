@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && next export && gh-pages -d out"
+    "deploy": "next build && touch ./out/.nojekyll && echo novammoth.com > ./out/CNAME && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

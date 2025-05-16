@@ -3,6 +3,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const repoName = 'novammoth.com'
 
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -12,8 +13,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: isProd ? `/${repoName}/` : '',
-  basePath: isProd ? `/${repoName}` : '',
 }
 
 export default nextConfig
