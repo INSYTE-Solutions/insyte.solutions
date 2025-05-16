@@ -61,7 +61,7 @@ function Ball({ position: initialPosition, radius, color, speed, amplitude }) {
 }
 
 function FlowingLines() {
-  const lineCount = 5
+  const lineCount = 3
 
   return (
     <group>
@@ -169,6 +169,8 @@ export default function Hero() {
     { text: "Platform Engineering" },
     { text: "CI/CD" },
     { text: "Database Systems" },
+    { text: "Web Applications" },
+    { text: "API Integrations" },
   ]
 
   return (
@@ -188,32 +190,32 @@ export default function Hero() {
             d="M-100,250 C50,200 150,350 300,250 S450,150 600,200 S750,300 900,250 S1050,150 1200,200 S1350,300 1500,250 S1650,150 1800,200 S1950,300 2100,250 S2250,150 2400,200 S2550,300 2700,250 S2850,150 3000,200"
             fill="none"
             stroke="rgba(16, 185, 129, 0.2)"
-            strokeWidth="5"
-            className="animate-[wave_15s_linear_infinite]" // Adjusted duration example
+            strokeWidth="15"
+            className="animate-[wave_30s_linear_infinite]" // Adjusted duration example
           />
           <path
             d="M-100,350 C50,300 150,450 300,350 S450,250 600,300 S750,400 900,350 S1050,250 1200,300 S1350,400 1500,350 S1650,250 1800,300 S1950,400 2100,350 S2250,250 2400,300 S2550,400 2700,350 S2850,250 3000,300"
             fill="none"
             stroke="rgba(14, 165, 233, 0.15)"
-            strokeWidth="2.5"
-            className="animate-[wave_30s_linear_infinite]" // Adjusted duration example
+            strokeWidth="12.5"
+            className="animate-[wave_60s_linear_infinite]" // Adjusted duration example
           />
           <path
             d="M-100,150 C50,200 150,100 300,150 S450,200 600,150 S750,100 900,150 S1050,200 1200,150 S1350,100 1500,200 S1650,200 1800,150 S1950,100 2100,200 S2250,200 2400,150 S2550,100 2700,200 S2850,200 3000,150"
             fill="none"
             stroke="rgba(255, 255, 255, 0.1)"
-            strokeWidth="2"
-            className="animate-[wave_35s_linear_infinite]" // Adjusted duration example
+            strokeWidth="10"
+            className="animate-[wave_100s_linear_infinite]" // Adjusted duration example
           />
         </svg>
       </div>
 
-      <div className="w-full z-10 backdrop-blur-sm bg-black/10">
+      <div className="w-full z-10 backdrop-blur-sm bg-black/10 h-screen flex place-items-center">
         <div className="container mx-auto px-4 text-center py-8 md:py-12">
-          <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
+          <h1 className="text-8xl md:text-9xl lg:text-[180px] font-bold text-transparent text-shadow-lg bg-clip-text bg-gradient-to-br from-emerald-500 to-blue-500">
             novammoth
           </h1>
-          <h2 className="text-m md:text-xl text-gray-300 mb-4">
+          <h2 className="text-sm md:text-base lg:text-lg text-gray-300 mb-4 -mt-2 md:-mt3 lg:-mt-4">
             Technology Consultants
           </h2>
 

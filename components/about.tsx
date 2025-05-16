@@ -6,7 +6,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-            About Novammoth          </span>
+            About</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">

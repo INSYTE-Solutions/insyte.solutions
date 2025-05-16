@@ -53,10 +53,10 @@ export function TypewriterEffect({
   }, [currentText, currentWordIndex, isDeleting, words])
 
   return (
-    <div className={cn("flex items-center text-2xl md:text-4xl font-bold", className)}>
+    <div className={cn("flex items-center text-2xl md:text-3xl lg:text-4xl font-bold", className)}>
       <span className="text-white">Specializing in&nbsp;</span>
       <span className="text-blue-400">{currentText}</span>
-      <span className={cn("ml-1 animate-pulse text-emerald-500", cursorClassName)}>|</span>
+      <span className={cn("ml-1 animate-pulse text-blue-500", cursorClassName)}>|</span>
     </div>
   )
 }
