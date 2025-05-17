@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-              novammoth consulting
+              INSYTE Solutions
             </h2>
             <p className="text-gray-400 mt-2">Building the digital infrastructure of tomorrow</p>
           </div>
@@ -28,7 +28,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Novammoth. All rights reserved.
+            &copy; {new Date().getFullYear()} INSYTE Solutions. All rights reserved.
           </p>
 
           <div className="mt-4 md:mt-0 flex space-x-6">

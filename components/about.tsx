@@ -12,7 +12,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-gray-300 mb-6">
-              With over a decade of experience in the tech industry, Novammoth provides expert consulting and
+              With over a decade of experience in the tech industry, Insyte Solutions provides expert consulting and
               development services for businesses looking to modernize their technical infrastructure and data
               operations.
             </p>

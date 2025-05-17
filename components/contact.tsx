@@ -50,7 +50,7 @@ export default function Contact() {
                 <Mail className="h-6 w-6 text-blue-400 mr-4" />
                 <div>
                   <p className="text-sm text-gray-400">Email</p>
-                  <p className="text-lg">info@novammoth.com</p>
+                  <p className="text-lg">info@insyte.solutions</p>
                 </div>
               </div>
 

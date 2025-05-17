@@ -213,10 +213,10 @@ export default function Hero() {
       <div className="w-full z-10 backdrop-blur-sm bg-black/10 h-screen flex place-items-center">
         <div className="container mx-auto px-4 text-center py-8 md:py-12">
           <h1 className="text-8xl md:text-9xl lg:text-[180px] font-bold text-transparent text-shadow-lg bg-clip-text bg-gradient-to-br from-emerald-500 to-blue-500">
-            novammoth
+            INSYTE
           </h1>
           <h2 className="text-sm md:text-base lg:text-lg text-gray-300 mb-4 -mt-2 md:-mt3 lg:-mt-4">
-            Technology Consultants
+            Solutions
           </h2>
 
           <div className="h-20 flex items-center justify-center mb-8">
