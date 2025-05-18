@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef, useMemo } from "react"
+import { useRef, useMemo, useState, useEffect } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Environment } from "@react-three/drei"
+import { Environment } from "@react-three/drei"
 import { TypewriterEffect } from "./typewriter-effect"
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
@@ -15,9 +15,9 @@ function ParallaxBalls() {
   const balls = useMemo(() => {
     return Array.from({ length: count }, (_, i) => ({
       position: [
-        (Math.random() - 0.5) * 20, // Wider spread
+        (Math.random() - 0.5) * 20,
         (Math.random() - 0.5) * 15,
-        (Math.random() - 0.5) * 15 - 5, // Different depths for parallax
+        (Math.random() - 0.5) * 15 - 5,
       ],
       radius: Math.random() * 0.3 + 0.1,
       color:
@@ -30,9 +30,17 @@ function ParallaxBalls() {
       amplitude: Math.random() * 0.5 + 0.5,
     }))
   }, [count])
+  const groupRef = useRef()
+
+  useFrame(({ clock }) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.001
+      groupRef.current.rotation.x += 0.0007
+    }
+  })
 
   return (
-    <group>
+    <group ref={groupRef}>
       {balls.map((ball, i) => (
         <Ball key={i} {...ball} />
       ))}
@@ -157,6 +165,23 @@ function FluctuatingLine({ index, yOffset, color, width, phaseOffset, frequency,
   )
 }
 
+function CameraParallax({ mouse }) {
+  const ref = useRef();
+
+  useFrame(({ camera }) => {
+    // Smoothly interpolate camera position based on mouse x/y
+    const lerpSpeed = 0.05;
+    const targetX = mouse.x * 1.5; // Adjust strength
+    const targetY = mouse.y * 1.2;
+
+    camera.position.x += (targetX - camera.position.x) * lerpSpeed;
+    camera.position.y += (targetY - camera.position.y) * lerpSpeed;
+    camera.lookAt(0, 0, 0);
+  });
+
+  return null;
+}
+
 export default function Hero() {
   const words = [
     { text: "Infrastructure" },
@@ -172,14 +197,27 @@ export default function Hero() {
     { text: "Web Applications" },
     { text: "API Integrations" },
   ]
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    function onMouseMove(event) {
+      // Calculate normalized coordinates
+      const x = (event.clientX / window.innerWidth) * 2 - 1;
+      const y = -((event.clientY / window.innerHeight) * 2 - 1); // invert y for Three.js coords
+      setMouse({ x, y });
+    }
+
+    window.addEventListener("mousemove", onMouseMove);
+    return () => window.removeEventListener("mousemove", onMouseMove);
+  }, []);
 
   return (
     <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 10], fov: 50 }} className="opacity-85">
+          <CameraParallax mouse={mouse} />
           <ParallaxBalls />
-          <FlowingLines />
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.2} enablePan={false} />
+          {/* <FlowingLines /> */}
           <Environment preset="night" />
         </Canvas>
       </div>

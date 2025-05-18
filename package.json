@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && touch ./out/.nojekyll && echo www.insyte.solutions > ./out/CNAME && gh-pages -d out --dotfiles"
+    "deploy": "next build && touch ./out/.nojekyll && echo insyte.solutions > ./out/CNAME && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
