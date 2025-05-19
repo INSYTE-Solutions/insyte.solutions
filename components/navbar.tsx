@@ -36,7 +36,6 @@ const NavBar = forwardRef<HTMLDivElement>(
       { name: "About", href: "#about" },
       { name: "Services", href: "#services" },
       { name: "Projects", href: "#projects" },
-      { name: "Contact", href: "#contact" },
     ]
 
     return (
