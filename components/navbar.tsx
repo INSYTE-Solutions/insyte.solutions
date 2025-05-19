@@ -1,71 +1,109 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import type React from "react"
+
+import { InsyteLogo } from "@/assets/logo"
+import { useState, useEffect, forwardRef } from "react"
+import { Database, Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import gsap from "gsap"
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+const NavBar = forwardRef<HTMLDivElement>(
+  ({ scrollToHero, scrollToAbout, scrollToServices, scrollToExpertise, scrollToContact, logoRef }, ref) => {
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const { theme, setTheme } = useTheme()
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 10) {
+          setIsScrolled(true)
+        } else {
+          setIsScrolled(false)
+        }
+      }
 
-  const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ]
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
-  return (
-    <nav
-      className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-black/80 backdrop-blur-md py-2" : "bg-transparent py-4",
-      )}
-    >
-      <div className="container mx-auto px-4 flex justify-end">
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-gray-300 hover:text-emerald-400 transition-colors">
-              {link.name}
-            </Link>
-          ))}
-        </div>
+    const navLinks = [
+      { name: "Home", href: "#hero" },
+      { name: "About", href: "#about" },
+      { name: "Services", href: "#services" },
+      { name: "Projects", href: "#projects" },
+      { name: "Contact", href: "#contact" },
+    ]
 
-        {/* Mobile Navigation Toggle */}
-        <button className="md:hidden text-gray-300" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+    return (
+      <>
+        <header
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+            isScrolled ? "bg-gray-900/60 backdrop-blur-xl shadow-lg py-2" : "bg-transparent py-4"
+          }`}
+        >
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between">
+              <div ref={logoRef} className="flex items-center cursor-pointer" onClick={scrollToHero}>
+                <InsyteLogo className="h-6 w-6 text-teal-500 mr-2" />
+                <span className="font-bold text-xl">INSYTE</span>
+              </div>
 
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-emerald-400 transition-colors py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+              <nav className="hidden md:flex items-center space-x-8">
+                {navLinks.map((link) => (
+                  <Link key={link.name} href={link.href} className="text-gray-300 hover:text-emerald-400 transition-colors">
+                    {link.name}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="flex items-center">
+                <Link
+                  key="Contact"
+                  href="#contact" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 hidden md:inline-flex bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 h-10 px-4 py-2 rounded-md">
+                  Contact
+                </Link>
+
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                  {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
-    </nav>
-  )
-}
+        </header>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 z-40 bg-gray-900/90 backdrop-blur-xl pt-20">
+            <nav className="container mx-auto px-4 py-6 flex flex-col space-y-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-xl py-2 border-b border-gray-800 text-gray-300 hover:text-emerald-400 transition-colors">
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </>
+    )
+  },
+)
+
+NavBar.displayName = "NavBar"
+
+export default NavBar
+

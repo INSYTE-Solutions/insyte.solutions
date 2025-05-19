@@ -2,7 +2,7 @@ import { Database, Server, Cloud, Cpu } from "lucide-react"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-950">
+    <section id="about" className="py-20 bg-gray-950/60 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
