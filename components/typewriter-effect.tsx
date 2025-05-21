@@ -54,9 +54,9 @@ export function TypewriterEffect({
 
   return (
     <div className={cn("flex items-center text-xl md:text-2xl lg:text-3xl font-bold", className)}>
-      <span className="text-white">Specializing in&nbsp;</span>
-      <span className="text-blue-400">{currentText}</span>
-      <span className={cn("ml-1 animate-pulse text-blue-500", cursorClassName)}>|</span>
+      <span className="text-gray-300">Specializing in&nbsp;</span>
+      <span className="text-[#0071bd]">{currentText}</span>
+      <span className={cn("ml-1 animate-pulse text-[#003c63]", cursorClassName)}>|</span>
     </div>
   )
 }

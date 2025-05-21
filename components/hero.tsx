@@ -9,7 +9,7 @@ import { ArrowDown } from "lucide-react"
 import * as THREE from "three"
 import Link from "next/link"
 import FlowingLinesAnimation from "./flowing-lines-animation"
-import { InsyteLogoWithName } from "@/assets/logo"
+import { InsyteLogoWithName, SVGLogo, SVGName } from "@/assets/logo"
 
 export default function Hero() {
   const words = [
@@ -42,29 +42,26 @@ export default function Hero() {
 
   return (
     <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
-      {/* <div className="absolute inset-0 z-[1] top-[380px] overflow-hidden pointer-events-none"> */}
-      {/*   <FlowingLinesAnimation /> */}
-      {/* </div> */}
-
       <div className="w-full z-10 backdrop-blur-xs bg-black/10 h-screen flex place-items-center">
         <div className="container mx-auto px-4 text-center py-8 md:py-12">
           <div className="flex flex-col items-center mb-8">
-            <InsyteLogoWithName/>
+            <SVGLogo className="w-[180px] mb-4" />
+            <SVGName className="w-[200px] mb-4" />
           </div>
 
           <div className="h-20 flex items-center justify-center mb-8">
             <TypewriterEffect words={words} />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
-              <Link href="#contact">Get in Touch</Link>
-            </Button>
-            <Button variant="outline" className="border-blue-600 text-blue-400 hover:bg-blue-950 px-8 py-6 text-lg">
-              <Link href="#services" className="flex items-center">
-                Discover More <ArrowDown className="ml-2 h-4 w-4" /></Link>
-            </Button>
-          </div>
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4"> */}
+          {/*   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"> */}
+          {/*     <Link href="#contact">Get in Touch</Link> */}
+          {/*   </Button> */}
+          {/*   <Button variant="outline" className="border-blue-600 text-blue-400 hover:bg-blue-950 px-8 py-6 text-lg"> */}
+          {/*     <Link href="#services" className="flex items-center"> */}
+          {/*       Discover More <ArrowDown className="ml-2 h-4 w-4" /></Link> */}
+          {/*   </Button> */}
+          {/* </div> */}
         </div>
       </div>
     </section>
