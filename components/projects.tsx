@@ -35,7 +35,7 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-gray-950/60 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0e7270] to-[#468872]">
             Featured Projects
           </span>
         </h2>
@@ -48,7 +48,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-900 rounded-lg overflow-hidden border border-blue-900/30 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20"
+              className="bg-gray-900 rounded-lg overflow-hidden border border-[#324b4a]/90 hover:border-[#00a072]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#004b4a]/40"
             >
               <div className="relative h-48">
                 <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
@@ -58,12 +58,12 @@ export default function Projects() {
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline" className="bg-blue-950/30 text-blue-300 border-blue-800">
+                    <Badge key={tagIndex} variant="outline" className="bg-[#324b4a]/30 text-[#468872] border-[#0e7270]">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="text-blue-400 border-blue-800 hover:bg-blue-950">
+                <Button variant="outline" size="sm" className="text-[#60caa0] border-[#98f7af] hover:bg-[#324b4a]/80">
                   Case Study <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </div>

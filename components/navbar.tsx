@@ -49,7 +49,7 @@ const NavBar = forwardRef<HTMLDivElement>(
             <div className="flex items-center justify-between">
               <div ref={logoRef} className="flex items-center cursor-pointer" onClick={scrollToHero}>
                 <InsyteLogo className="h-6 w-6 text-teal-500 mr-2" />
-                <span className="font-bold text-xl">INSYTE</span>
+                <span className="font-bold text-xl text-[#dbece5]">INSYTE</span>
               </div>
 
               <nav className="hidden md:flex items-center space-x-8">

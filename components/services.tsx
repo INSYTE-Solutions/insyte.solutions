@@ -36,7 +36,7 @@ export default function Services() {
     <section id="services" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Services</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0e7270] to-[#468872]">Services</span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -47,9 +47,9 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-900 p-6 rounded-lg border border-blue-900/30 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20"
+              className="bg-gray-900 p-6 rounded-lg border border-[#324b4a]/90 hover:border-[#00a072]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#004b4a]/40"
             >
-              <div className="text-blue-400 mb-4">{service.icon}</div>
+              <div className="text-[#329d8b] mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-400">{service.description}</p>
             </motion.div>

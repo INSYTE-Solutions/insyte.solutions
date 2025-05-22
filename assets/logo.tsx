@@ -129,7 +129,7 @@ export function SVGLogo({gradientStart = "#006666", gradientEnd = "#00cccc", cla
   )
 }
 
-export function SVGName({className, fill = '#e0eee8'}: {className?: string; fill?: string;}) {
+export function SVGName({className, fill = '#dbece5'}: {className?: string; fill?: string;}) {
   return (
     <svg
       id="a"
