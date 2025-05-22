@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* In your global CSS file */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --background: 0 0% 0%;
   --foreground: 210 40% 98%;
@@ -45,5 +55,18 @@ body {
   }
   100% {
     transform: translateX(-50%); /* Adjust the percentage */
+  }
+}
+
+#circuit-line-1 {
+  stroke-dasharray: 200; /* Estimate or get path length via JS */
+  stroke-dashoffset: 200; /* Same as stroke-dasharray to start "invisible" */
+  animation: draw-line 2s ease-out forwards;
+  animation-delay: 0.5s; /* Optional delay */
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
   }
 }

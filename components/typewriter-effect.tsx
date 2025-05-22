@@ -42,11 +42,11 @@ export function TypewriterEffect({
           if (currentText === word) {
             setTimeout(() => {
               setIsDeleting(true)
-            }, 2000) // Wait time before deleting
+            }, 1300) // Wait time before deleting
           }
         }
       },
-      isDeleting ? 50 : 100,
+      isDeleting ? 50 : 65,
     ) // Typing is slower than deleting
 
     return () => clearTimeout(timeout)
@@ -54,8 +54,8 @@ export function TypewriterEffect({
 
   return (
     <div className={cn("flex items-center text-xl md:text-2xl lg:text-3xl font-bold", className)}>
-      <span className="text-gray-300">Specializing in&nbsp;</span>
-      <span className="text-[#0071bd]">{currentText}</span>
+      <span className="text-[#e0eee8]">Specializing in&nbsp;</span>
+      <span className="text-[#00aaa8]">{currentText}</span>
       <span className={cn("ml-1 animate-pulse text-[#003c63]", cursorClassName)}>|</span>
     </div>
   )

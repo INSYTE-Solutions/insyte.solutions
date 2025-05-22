@@ -10,22 +10,27 @@ import * as THREE from "three"
 import Link from "next/link"
 import FlowingLinesAnimation from "./flowing-lines-animation"
 import { InsyteLogoWithName, SVGLogo, SVGName } from "@/assets/logo"
+import DataVisualization from '@/components/data-visualisation'
+import ParticleBackground from "@/components/particle-background"
+import FloatingElements from "@/components/floating-elements"
+
+
+const words = [
+  { text: "Infrastructure" },
+  { text: "Data Science" },
+  { text: "Cloud Migrations" },
+  { text: "Distributed Systems" },
+  { text: "Microservices" },
+  { text: "DevOps" },
+  { text: "Automation" },
+  { text: "Platform Engineering" },
+  { text: "CI/CD" },
+  { text: "Database Systems" },
+  { text: "Web Applications" },
+  { text: "API Integrations" },
+]
 
 export default function Hero() {
-  const words = [
-    { text: "Infrastructure" },
-    { text: "Data Science" },
-    { text: "Cloud Migrations" },
-    { text: "Distributed Systems" },
-    { text: "Microservices" },
-    { text: "DevOps" },
-    { text: "Automation" },
-    { text: "Platform Engineering" },
-    { text: "CI/CD" },
-    { text: "Database Systems" },
-    { text: "Web Applications" },
-    { text: "API Integrations" },
-  ]
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -42,11 +47,18 @@ export default function Hero() {
 
   return (
     <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-10 opacity-100">
+        <DataVisualization />
+      </div>
+      <ParticleBackground />
+      <FloatingElements />
+
+
       <div className="w-full z-10 backdrop-blur-xs bg-black/10 h-screen flex place-items-center">
         <div className="container mx-auto px-4 text-center py-8 md:py-12">
           <div className="flex flex-col items-center mb-8">
-            <SVGLogo className="w-[180px] mb-4" />
-            <SVGName className="w-[200px] mb-4" />
+            <SVGLogo className="w-[180px] md:w-[250px] lg:w-[320px] mb-4" />
+            <SVGName className="w-[200px] md:w-[280px] lg:w-[350px] mb-4 drop-shadow-2xl drop-shadow-red-950" />
           </div>
 
           <div className="h-20 flex items-center justify-center mb-8">
