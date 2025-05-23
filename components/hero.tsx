@@ -47,11 +47,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-10 opacity-100">
+      <div className="absolute inset-0 z-10 mt-10 opacity-30">
         <DataVisualization />
       </div>
       <ParticleBackground />
-      <FloatingElements />
 
 
       <div className="w-full z-10 backdrop-blur-xs bg-black/10 h-screen flex place-items-center">

@@ -3,14 +3,14 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="py-10 bg-gray-950 border-t border-gray-800">
+    <footer className="py-10 bg-gray-950/10 border-t border-gray-800 backdrop-blur">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0e7270] to-[#468872]">
               INSYTE Solutions
             </h2>
-            <p className="text-gray-400 mt-2">See clearly now</p>
+            <p className="text-gray-400 mt-2">Your Vision, Engineered.</p>
           </div>
 
           <div className="flex space-x-6">

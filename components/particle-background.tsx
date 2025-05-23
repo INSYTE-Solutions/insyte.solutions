@@ -23,7 +23,7 @@ export default function ParticleBackground() {
     <Particles
       id="tsparticles"
       init={particlesInit}
-      className="absolute inset-0 z-0"
+      className="fixed top-0 left-0 w-screen h-screen z-0 font-mono opacity-70 pointer-events-none"
       options={{
         fullScreen: {
           enable: false,
@@ -40,9 +40,9 @@ export default function ParticleBackground() {
           },
           links: {
             color: "#ffffff",
-            distance: 150,
+            distance: 130,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.1,
             width: 1,
           },
           move: {

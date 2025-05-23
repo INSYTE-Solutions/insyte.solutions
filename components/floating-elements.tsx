@@ -16,7 +16,7 @@ export default function FloatingElements() {
     // Binary data
     for (let i = 0; i < 20; i++) {
       const element = document.createElement("div")
-      element.className = "floating-data-element absolute text-xs md:text-sm opacity-30 font-mono"
+      element.className="fixed text-xs: md:text-sm top-0 left-0 w-screen h-screen z-0 font-mono opacity-20 pointer-events-none"
       element.style.color = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, ${Math.random() * 0.5 + 0.3})`
       element.style.left = `${Math.random() * 100}%`
       element.style.top = `${Math.random() * 100}%`

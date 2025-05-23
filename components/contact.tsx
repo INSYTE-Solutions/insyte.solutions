@@ -13,25 +13,45 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
+    bottle: "",
   })
+
+  const [status, setStatus] = useState<"idle" | "success" | "error" | "loading">("idle")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-    // Show success message
-    alert("Thanks for your message! I'll get back to you soon.")
+    setStatus("loading")
+
+    const payload = {
+      ...formData,
+      shared_key: "vRKqg6gyGcW8rxg9"
+    }
+
+    try {
+      const res = await fetch("https://contact.insyte.solutions/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) throw new Error("Request failed")
+
+      setStatus("success")
+      setFormData({ name: "", email: "", message: "", bot_field: "" })
+    } catch (error) {
+      setStatus("error")
+    }
   }
 
   return (
-    <section id="contact" className="py-20 bg-black/10 backdrop-blur-sm">
+    <section id="contact" className="py-20 bg-black/10 backdrop-blur-[1px]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0e7270] to-[#468872]">Get in Touch</span>
@@ -64,9 +84,20 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-gray-900 p-8 rounded-lg border border-blue-900/30">
+          <div className="bg-gray-900 p-8 rounded-lg border border-[#0e7270]/30">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div style={{ display: "none" }}>
+                <label htmlFor="bot_field">Leave this field empty</label>
+                <input
+                  type="text"
+                  name="bot_field"
+                  id="bot_field"
+                  value={formData.bot_field}
+                  onChange={handleChange}
+                  autoComplete="off"
+                />
+              </div>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name

@@ -10,7 +10,6 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 import ParticleBackground from '@/components/particle-background'
-import FloatingElements from '@/components/floating-elements'
 
 export default function Home() {
 
@@ -31,7 +30,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Mouse follower */}
-      <div className="cursor-follow fixed w-4 h-4 rounded-full bg-gradient-to-r from-teal-400 to-blue-500 opacity-50 mix-blend-screen pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="invisible lg:visible cursor-follow fixed w-4 h-4 rounded-full bg-gradient-to-r from-teal-400 to-blue-500 opacity-50 mix-blend-screen pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"></div>
       <Navbar />
       <Hero />
       <About />
