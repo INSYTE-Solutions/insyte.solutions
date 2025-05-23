@@ -4,7 +4,7 @@
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 763.5 256.39"
 >
-  <g id="container" fill="#000000">
+  <g id="container" fill="#ffffff">
     <g id="insyte">
       <rect    id="insyte_i" x="-56.95" y="59.68" width="143.27" height="29.27" transform="translate(-59.64 88.95) rotate(-89.96)"/>
       <path    id="insyte_n" d="M98.62,2.69l70.5,95.98c2.02-1.23.37-1.96.37-2.61V3.81l1.12-1.12h25.5l1.12,1.12v142.12h-26.25L100.5,49.19v96.75h-27.75V3.81l1.12-1.12h24.75Z"/>
