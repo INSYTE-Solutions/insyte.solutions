@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'INSYTE Solutions',
     images: [
       {
-        url: 'https://insyte.solutions/favicon.svg',
+        url: 'https://insyte.solutions/assets/ograph.png',
         width: 1200,
         height: 630,
         alt: 'INSYTE Solutions logo',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'INSYTE Solutions',
     description: 'Your Vision, Engineered.',
-    images: ['https://insyte.solutions/favicon.svg'],
+    images: ['https://insyte.solutions/assets/ograph.png'],
   }
 }
 
