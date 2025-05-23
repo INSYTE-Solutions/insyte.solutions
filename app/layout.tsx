@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: 'INSYTE Solutions',
+    title: 'Infrastructure, automation and data science consulting',
     description: 'Your Vision, Engineered.',
     url: 'https://insyte.solutions',
     siteName: 'INSYTE Solutions',
